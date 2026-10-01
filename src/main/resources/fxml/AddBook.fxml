@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.library.controller.AddBookController"
+            stylesheets="@../css/style.css"
+            styleClass="dashboard-root"
+            prefWidth="1200"
+            prefHeight="700">
+
+    <!-- SIDEBAR -->
+
+    <left>
+
+        <VBox prefWidth="260"
+              spacing="12"
+              styleClass="sidebar">
+
+            <padding>
+                <Insets top="30"
+                        right="20"
+                        bottom="25"
+                        left="20"/>
+            </padding>
+
+            <Label text="LIBRARY"
+                   styleClass="sidebar-title"/>
+
+            <Label text="Management System"
+                   styleClass="sidebar-subtitle"
+                   wrapText="true"/>
+
+            <VBox spacing="10"
+                  VBox.vgrow="ALWAYS">
+
+                <padding>
+                    <Insets top="20"/>
+                </padding>
+
+                <Button text="Dashboard"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Add Book"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button-active"/>
+
+                <Button text="Add Member"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Manage Members"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Issue Book"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Return Book"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Borrowing History"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"
+                        wrapText="true"/>
+
+            </VBox>
+
+            <Button text="LOGOUT"
+                    maxWidth="Infinity"
+                    prefHeight="45"
+                    styleClass="logout-button"/>
+
+        </VBox>
+
+    </left>
+
+
+    <!-- MAIN CONTENT -->
+
+    <center>
+
+        <VBox spacing="25"
+              styleClass="dashboard-content">
+
+            <padding>
+                <Insets top="35"
+                        right="50"
+                        bottom="35"
+                        left="50"/>
+            </padding>
+
+
+            <!-- PAGE HEADER -->
+
+            <VBox spacing="6">
+
+                <Label text="Add New Book"
+                       styleClass="dashboard-title"/>
+
+                <Label text="Add a new book to the library collection"
+                       styleClass="dashboard-subtitle"/>
+
+            </VBox>
+
+
+            <!-- FORM CARD -->
+
+            <VBox spacing="25"
+                  styleClass="form-card">
+
+                <Label text="Book Information"
+                       styleClass="form-card-title"/>
+
+
+                <!-- ROW 1 -->
+
+                <HBox spacing="25">
+
+                    <VBox spacing="8"
+                          HBox.hgrow="ALWAYS">
+
+                        <Label text="Book ID / ISBN"
+                               styleClass="form-label"/>
+
+                        <TextField fx:id="bookIdField"
+                                   promptText="Enter Book ID or ISBN"
+                                   prefHeight="45"
+                                   styleClass="form-input"/>
+
+                    </VBox>
+
+
+                    <VBox spacing="8"
+                          HBox.hgrow="ALWAYS">
+
+                        <Label text="Book Title"
+                               styleClass="form-label"/>
+
+                        <TextField fx:id="bookTitleField"
+                                   promptText="Enter book title"
+                                   prefHeight="45"
+                                   styleClass="form-input"/>
+
+                    </VBox>
+
+                </HBox>
+
+
+                <!-- ROW 2 -->
+
+                <HBox spacing="25">
+
+                    <VBox spacing="8"
+                          HBox.hgrow="ALWAYS">
+
+                        <Label text="Author"
+                               styleClass="form-label"/>
+
+                        <TextField fx:id="authorField"
+                                   promptText="Enter author name"
+                                   prefHeight="45"
+                                   styleClass="form-input"/>
+
+                    </VBox>
+
+
+                    <VBox spacing="8"
+                          HBox.hgrow="ALWAYS">
+
+                        <Label text="Category"
+                               styleClass="form-label"/>
+
+                        <ComboBox fx:id="categoryComboBox"
+                                  promptText="Select category"
+                                  prefHeight="45"
+                                  maxWidth="Infinity"
+                                  styleClass="form-input"/>
+
+                    </VBox>
+
+                </HBox>
+
+
+                <!-- ROW 3 -->
+
+                <HBox spacing="25">
+
+                    <VBox spacing="8"
+                          HBox.hgrow="ALWAYS">
+
+                        <Label text="Published Year"
+                               styleClass="form-label"/>
+
+                        <TextField fx:id="publishedYearField"
+                                   promptText="e.g. 2024"
+                                   prefHeight="45"
+                                   styleClass="form-input"/>
+
+                    </VBox>
+
+
+                    <VBox spacing="8"
+                          HBox.hgrow="ALWAYS">
+
+                        <Label text="Quantity"
+                               styleClass="form-label"/>
+
+                        <TextField fx:id="quantityField"
+                                   promptText="Enter quantity"
+                                   prefHeight="45"
+                                   styleClass="form-input"/>
+
+                    </VBox>
+
+                </HBox>
+
+
+                <!-- MESSAGE -->
+
+                <Label fx:id="messageLabel"
+                       text=""
+                       wrapText="true"
+                       styleClass="form-message"/>
+
+
+                <!-- BUTTONS -->
+
+                <HBox spacing="15"
+                      alignment="CENTER_RIGHT">
+
+                    <Button text="CLEAR"
+                            onAction="#handleClear"
+                            prefWidth="130"
+                            prefHeight="45"
+                            styleClass="clear-button"/>
+
+                    <Button text="ADD BOOK"
+                            onAction="#handleAddBook"
+                            prefWidth="150"
+                            prefHeight="45"
+                            styleClass="primary-button"/>
+
+                </HBox>
+
+            </VBox>
+
+
+            <!-- BOTTOM INFO -->
+
+            <HBox styleClass="info-card">
+
+                <Label text="Tip: Make sure the Book ID / ISBN is unique before adding a new book."
+                       styleClass="info-text"
+                       wrapText="true"/>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

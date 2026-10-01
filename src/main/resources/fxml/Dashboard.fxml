@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.library.controller.DashboardController"
+            stylesheets="@../css/style.css"
+            styleClass="dashboard-root"
+            prefWidth="1200"
+            prefHeight="700">
+
+    <!-- ==================== LEFT SIDEBAR ==================== -->
+
+    <left>
+
+        <VBox prefWidth="260"
+              spacing="12"
+              styleClass="sidebar">
+
+            <padding>
+                <Insets top="30"
+                        right="20"
+                        bottom="25"
+                        left="20"/>
+            </padding>
+
+            <!-- Logo / Title -->
+
+            <Label text="LIBRARY"
+                   styleClass="sidebar-title"/>
+
+            <Label text="Management System"
+                   styleClass="sidebar-subtitle"
+                   wrapText="true"/>
+
+
+            <!-- Navigation Buttons -->
+
+            <VBox spacing="10"
+                  VBox.vgrow="ALWAYS">
+
+                <padding>
+                    <Insets top="20"/>
+                </padding>
+
+
+                <!-- Dashboard -->
+
+                <Button text="Dashboard"
+                        onAction="#handleDashboard"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button-active"/>
+
+
+                <!-- Add Book -->
+
+                <Button text="Add Book"
+                        onAction="#handleAddBook"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+
+                <!-- Add Member -->
+
+                <Button text="Add Member"
+                        onAction="#handleAddMember"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+
+                <!-- Manage Members -->
+
+                <Button text="Manage Members"
+                        onAction="#handleManageMembers"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+
+                <!-- Issue Book -->
+
+                <Button text="Issue Book"
+                        onAction="#handleIssueBook"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+
+                <!-- Return Book -->
+
+                <Button text="Return Book"
+                        onAction="#handleReturnBook"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+
+                <!-- Borrowing History -->
+
+                <Button text="Borrowing History"
+                        onAction="#handleBorrowingHistory"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        wrapText="true"
+                        styleClass="sidebar-button"/>
+
+            </VBox>
+
+
+            <!-- Logout -->
+
+            <Button text="LOGOUT"
+                    onAction="#handleLogout"
+                    maxWidth="Infinity"
+                    prefHeight="45"
+                    styleClass="logout-button"/>
+
+        </VBox>
+
+    </left>
+
+
+    <!-- ==================== MAIN DASHBOARD ==================== -->
+
+    <center>
+
+        <VBox spacing="25"
+              styleClass="dashboard-content">
+
+            <padding>
+                <Insets top="35"
+                        right="35"
+                        bottom="35"
+                        left="35"/>
+            </padding>
+
+
+            <!-- ================= HEADER ================= -->
+
+            <HBox alignment="CENTER_LEFT"
+                  spacing="10">
+
+                <VBox spacing="5"
+                      HBox.hgrow="ALWAYS">
+
+                    <Label text="Dashboard"
+                           styleClass="dashboard-title"/>
+
+                    <Label text="Welcome to Library Management System"
+                           styleClass="dashboard-subtitle"
+                           wrapText="true"/>
+
+                </VBox>
+
+
+                <!-- Admin Label -->
+
+                <Label text="ADMIN"
+                       styleClass="admin-label"/>
+
+            </HBox>
+
+
+            <!-- ================= STAT CARDS ================= -->
+
+            <HBox spacing="20">
+
+
+                <!-- Total Books -->
+
+                <VBox prefWidth="210"
+                      minWidth="210"
+                      prefHeight="145"
+                      spacing="8"
+                      styleClass="stat-card">
+
+                    <Label text="BOOKS"
+                           styleClass="card-heading"/>
+
+                    <Label text="Total Books"
+                           styleClass="stat-title"
+                           wrapText="true"/>
+
+                    <Label text="0"
+                           fx:id="totalBooksLabel"
+                           styleClass="stat-number"/>
+
+                </VBox>
+
+
+                <!-- Total Members -->
+
+                <VBox prefWidth="210"
+                      minWidth="210"
+                      prefHeight="145"
+                      spacing="8"
+                      styleClass="stat-card">
+
+                    <Label text="MEMBERS"
+                           styleClass="card-heading"/>
+
+                    <Label text="Total Members"
+                           styleClass="stat-title"
+                           wrapText="true"/>
+
+                    <Label text="0"
+                           fx:id="totalMembersLabel"
+                           styleClass="stat-number"/>
+
+                </VBox>
+
+
+                <!-- Currently Borrowed -->
+
+                <VBox prefWidth="210"
+                      minWidth="210"
+                      prefHeight="145"
+                      spacing="8"
+                      styleClass="stat-card">
+
+                    <Label text="BORROWED"
+                           styleClass="card-heading"/>
+
+                    <Label text="Currently Borrowed"
+                           styleClass="stat-title"
+                           wrapText="true"/>
+
+                    <Label text="0"
+                           fx:id="borrowedBooksLabel"
+                           styleClass="stat-number"/>
+
+                </VBox>
+
+
+                <!-- Overdue -->
+
+                <VBox prefWidth="210"
+                      minWidth="210"
+                      prefHeight="145"
+                      spacing="8"
+                      styleClass="stat-card">
+
+                    <Label text="OVERDUE"
+                           styleClass="card-heading"/>
+
+                    <Label text="Overdue Books"
+                           styleClass="stat-title"
+                           wrapText="true"/>
+
+                    <Label text="0"
+                           fx:id="overdueBooksLabel"
+                           styleClass="stat-number"/>
+
+                </VBox>
+
+            </HBox>
+
+
+            <!-- ================= WELCOME CARD ================= -->
+
+            <VBox spacing="15"
+                  styleClass="welcome-card">
+
+                <Label text="Welcome to Library Management System"
+                       styleClass="welcome-title"
+                       wrapText="true"/>
+
+                <Label text="Manage your library easily and efficiently."
+                       styleClass="welcome-text"
+                       wrapText="true"/>
+
+                <Label text="Use the navigation menu on the left to manage books, members, issuing, returns and borrowing history."
+                       styleClass="welcome-text"
+                       wrapText="true"/>
+
+            </VBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

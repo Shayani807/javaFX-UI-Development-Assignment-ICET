@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.library.controller.ManageMembersController"
+            stylesheets="@../css/style.css"
+            styleClass="dashboard-root"
+            prefWidth="1200"
+            prefHeight="700">
+
+    <left>
+        <VBox prefWidth="260"
+              spacing="12"
+              styleClass="sidebar">
+
+            <padding>
+                <Insets top="30"
+                        right="20"
+                        bottom="25"
+                        left="20"/>
+            </padding>
+
+            <Label text="LIBRARY"
+                   styleClass="sidebar-title"/>
+
+            <Label text="Management System"
+                   styleClass="sidebar-subtitle"
+                   wrapText="true"/>
+
+            <VBox spacing="10"
+                  VBox.vgrow="ALWAYS">
+
+                <padding>
+                    <Insets top="20"/>
+                </padding>
+
+                <Button text="Dashboard"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Add Book"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Add Member"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Manage Members"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button-active"/>
+
+                <Button text="Issue Book"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Return Book"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Borrowing History"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        wrapText="true"
+                        styleClass="sidebar-button"/>
+
+            </VBox>
+
+            <Button text="LOGOUT"
+                    maxWidth="Infinity"
+                    prefHeight="45"
+                    styleClass="logout-button"/>
+
+        </VBox>
+    </left>
+
+
+    <center>
+
+        <VBox spacing="20"
+              styleClass="dashboard-content">
+
+            <padding>
+                <Insets top="35"
+                        right="40"
+                        bottom="35"
+                        left="40"/>
+            </padding>
+
+
+            <!-- TITLE -->
+
+            <VBox spacing="6">
+
+                <Label text="Manage Members"
+                       styleClass="dashboard-title"/>
+
+                <Label text="Search, edit and manage library members"
+                       styleClass="dashboard-subtitle"/>
+
+            </VBox>
+
+
+            <!-- SEARCH -->
+
+            <HBox spacing="15">
+
+                <TextField fx:id="searchField"
+                           promptText="Search by Member ID, Name, Email or Phone..."
+                           prefHeight="45"
+                           HBox.hgrow="ALWAYS"
+                           styleClass="form-input"/>
+
+                <Button text="SEARCH"
+                        onAction="#handleSearch"
+                        prefWidth="120"
+                        prefHeight="45"
+                        styleClass="primary-button"/>
+
+                <Button text="CLEAR"
+                        onAction="#handleClearSearch"
+                        prefWidth="120"
+                        prefHeight="45"
+                        styleClass="clear-button"/>
+
+            </HBox>
+
+
+            <!-- MEMBER TABLE -->
+
+            <VBox spacing="15"
+                  styleClass="form-card"
+                  VBox.vgrow="ALWAYS">
+
+                <HBox alignment="CENTER_LEFT">
+
+                    <Label text="Member List"
+                           styleClass="form-card-title"
+                           HBox.hgrow="ALWAYS"/>
+
+                    <Label fx:id="memberCountLabel"
+                           text="Members: 0"
+                           styleClass="form-message"/>
+
+                </HBox>
+
+
+                <TableView fx:id="memberTable"
+                           VBox.vgrow="ALWAYS">
+
+                    <columns>
+
+                        <TableColumn fx:id="memberIdColumn"
+                                     text="Member ID"
+                                     prefWidth="110"/>
+
+                        <TableColumn fx:id="nameColumn"
+                                     text="Full Name"
+                                     prefWidth="190"/>
+
+                        <TableColumn fx:id="emailColumn"
+                                     text="Email"
+                                     prefWidth="220"/>
+
+                        <TableColumn fx:id="phoneColumn"
+                                     text="Phone Number"
+                                     prefWidth="150"/>
+
+                        <TableColumn fx:id="addressColumn"
+                                     text="Address"
+                                     prefWidth="230"/>
+
+                    </columns>
+
+                </TableView>
+
+
+                <!-- BUTTONS -->
+
+                <HBox spacing="15"
+                      alignment="CENTER_RIGHT">
+
+                    <Button text="EDIT MEMBER"
+                            onAction="#handleEdit"
+                            prefWidth="150"
+                            prefHeight="45"
+                            styleClass="primary-button"/>
+
+                    <Button text="DELETE MEMBER"
+                            onAction="#handleDelete"
+                            prefWidth="160"
+                            prefHeight="45"
+                            styleClass="clear-button"/>
+
+                </HBox>
+
+            </VBox>
+
+
+            <HBox styleClass="info-card">
+
+                <Label text="Tip: Select a member from the table before editing or deleting."
+                       styleClass="info-text"
+                       wrapText="true"/>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

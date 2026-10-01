@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.library.controller.IssueBookController"
+            stylesheets="@../css/style.css"
+            styleClass="dashboard-root"
+            prefWidth="1200"
+            prefHeight="700">
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <left>
+
+        <VBox prefWidth="260"
+              spacing="12"
+              styleClass="sidebar">
+
+            <padding>
+                <Insets top="30"
+                        right="20"
+                        bottom="25"
+                        left="20"/>
+            </padding>
+
+            <Label text="LIBRARY"
+                   styleClass="sidebar-title"/>
+
+            <Label text="Management System"
+                   styleClass="sidebar-subtitle"
+                   wrapText="true"/>
+
+            <VBox spacing="10"
+                  VBox.vgrow="ALWAYS">
+
+                <padding>
+                    <Insets top="20"/>
+                </padding>
+
+                <Button text="Dashboard"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Add Book"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Add Member"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Manage Members"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Issue Book"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button-active"/>
+
+                <Button text="Return Book"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        styleClass="sidebar-button"/>
+
+                <Button text="Borrowing History"
+                        maxWidth="Infinity"
+                        prefHeight="45"
+                        wrapText="true"
+                        styleClass="sidebar-button"/>
+
+            </VBox>
+
+            <Button text="LOGOUT"
+                    maxWidth="Infinity"
+                    prefHeight="45"
+                    styleClass="logout-button"/>
+
+        </VBox>
+
+    </left>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <center>
+
+        <VBox spacing="25"
+              styleClass="dashboard-content">
+
+            <padding>
+                <Insets top="35"
+                        right="50"
+                        bottom="35"
+                        left="50"/>
+            </padding>
+
+
+            <!-- HEADER -->
+
+            <VBox spacing="6">
+
+                <Label text="Issue Book"
+                       styleClass="dashboard-title"/>
+
+                <Label text="Issue a book to a library member"
+                       styleClass="dashboard-subtitle"/>
+
+            </VBox>
+
+
+            <!-- FORM -->
+
+            <VBox spacing="25"
+                  styleClass="form-card">
+
+                <Label text="Issue Book Information"
+                       styleClass="form-card-title"/>
+
+
+                <!-- MEMBER -->
+
+                <VBox spacing="8">
+
+                    <Label text="Select Member"
+                           styleClass="form-label"/>
+
+                    <ComboBox fx:id="memberComboBox"
+                              promptText="Select a member"
+                              prefHeight="45"
+                              maxWidth="Infinity"
+                              styleClass="form-input"/>
+
+                </VBox>
+
+
+                <!-- BOOK -->
+
+                <VBox spacing="8">
+
+                    <Label text="Select Book"
+                           styleClass="form-label"/>
+
+                    <ComboBox fx:id="bookComboBox"
+                              promptText="Select a book"
+                              prefHeight="45"
+                              maxWidth="Infinity"
+                              styleClass="form-input"/>
+
+                </VBox>
+
+
+                <!-- DATES -->
+
+                <HBox spacing="25">
+
+                    <VBox spacing="8"
+                          HBox.hgrow="ALWAYS">
+
+                        <Label text="Issue Date"
+                               styleClass="form-label"/>
+
+                        <DatePicker fx:id="issueDatePicker"
+                                    prefHeight="45"
+                                    maxWidth="Infinity"
+                                    styleClass="form-input"/>
+
+                    </VBox>
+
+
+                    <VBox spacing="8"
+                          HBox.hgrow="ALWAYS">
+
+                        <Label text="Due Date"
+                               styleClass="form-label"/>
+
+                        <DatePicker fx:id="dueDatePicker"
+                                    prefHeight="45"
+                                    maxWidth="Infinity"
+                                    styleClass="form-input"/>
+
+                    </VBox>
+
+                </HBox>
+
+
+                <!-- MESSAGE -->
+
+                <Label fx:id="messageLabel"
+                       text=""
+                       wrapText="true"
+                       styleClass="form-message"/>
+
+
+                <!-- BUTTONS -->
+
+                <HBox spacing="15"
+                      alignment="CENTER_RIGHT">
+
+                    <Button text="CLEAR"
+                            onAction="#handleClear"
+                            prefWidth="130"
+                            prefHeight="45"
+                            styleClass="clear-button"/>
+
+                    <Button text="ISSUE BOOK"
+                            onAction="#handleIssueBook"
+                            prefWidth="150"
+                            prefHeight="45"
+                            styleClass="primary-button"/>
+
+                </HBox>
+
+            </VBox>
+
+
+            <!-- INFO -->
+
+            <HBox styleClass="info-card">
+
+                <Label text="Tip: Make sure the due date is after the issue date."
+                       styleClass="info-text"
+                       wrapText="true"/>
+
+            </HBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
