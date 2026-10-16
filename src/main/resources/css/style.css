@@ -1,749 +1,320 @@
-/* =========================================================
-   LIBRARY MANAGEMENT SYSTEM
-   COMPLETE STYLE.CSS
-   LOGIN + DASHBOARD
-   ========================================================= */
-
-
-/* =========================================================
-   LOGIN PAGE
-   ========================================================= */
-
 .root {
-    -fx-background-color: linear-gradient(
-        to bottom right,
-        #0B5ED7,
-        #3D8BFF
-    );
+    -fx-background-color: #EFEBE9;
 }
-
-
-/* =========================================================
-   LOGIN - LEFT LIBRARY SECTION
-   ========================================================= */
-
+.main-container {
+    -fx-background-color: white;
+    -fx-background-radius: 25;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 25, 0.2, 0, 8);
+}
+.login-section {
+    -fx-background-color: white;
+    -fx-background-radius: 0 25 25 0;
+}
 .library-section {
     -fx-background-image: url("../images/Library.png");
-
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
-
     -fx-background-radius: 25 0 0 25;
-
     -fx-padding: 45px;
 }
-
-
-/* LOGIN MAIN TITLE */
-
 .library-title {
     -fx-text-fill: white;
-
     -fx-font-family: "Segoe UI";
     -fx-font-size: 40px;
     -fx-font-weight: bold;
-
     -fx-wrap-text: true;
-
-    -fx-effect: dropshadow(
-        gaussian,
-        rgba(0,0,0,0.45),
-        8,
-        0.3,
-        2,
-        3
-    );
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 8, 0.3, 2, 3);
 }
-
-
-/* LOGIN SUBTITLE */
-
 .library-subtitle {
-    -fx-text-fill: #E8F1FF;
-
+    -fx-text-fill: #FFF8F0;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 20px;
     -fx-font-weight: bold;
 }
-
-
-/* LOGIN DESCRIPTION */
-
 .library-description {
-    -fx-text-fill: #EAF3FF;
-
+    -fx-text-fill: #FFEFE0;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 15px;
-
     -fx-line-spacing: 5px;
 }
-
-
-/* =========================================================
-   LOGIN CARD
-   ========================================================= */
-
 .login-card {
     -fx-background-color: white;
-
     -fx-background-radius: 0 25 25 0;
-
     -fx-padding: 40px;
-
-    -fx-effect: dropshadow(
-        gaussian,
-        rgba(0,0,0,0.25),
-        25,
-        0.2,
-        0,
-        8
-    );
 }
-
-
-/* LOGIN TITLE */
-
 .login-title {
-    -fx-text-fill: #0B5ED7;
-
+    -fx-text-fill: #4E342E;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 30px;
     -fx-font-weight: bold;
 }
-
-
-/* LOGIN SUBTITLE */
-
 .login-subtitle {
-    -fx-text-fill: #777777;
-
+    -fx-text-fill: #8D8D8D;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 14px;
 }
-
-
-/* =========================================================
-   FORM LABELS
-   ========================================================= */
-
 .field-label {
-    -fx-text-fill: #333333;
-
+    -fx-text-fill: #5D4037;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 14px;
     -fx-font-weight: bold;
 }
-
-
-/* =========================================================
-   INPUT FIELDS
-   ========================================================= */
-
 .input-field {
-    -fx-background-color: #F5F8FC;
-
-    -fx-border-color: #D5E3F7;
+    -fx-background-color: #F5F1EB;
+    -fx-border-color: #D7CCC8;
     -fx-border-width: 1.5px;
     -fx-border-radius: 10px;
-
     -fx-background-radius: 10px;
-
     -fx-padding: 0 14px;
-
     -fx-font-family: "Segoe UI";
     -fx-font-size: 14px;
 }
-
-
 .input-field:hover {
-    -fx-border-color: #9DBDEB;
+    -fx-border-color: #A1887F;
 }
-
-
 .input-field:focused {
     -fx-background-color: white;
-
-    -fx-border-color: #0B5ED7;
+    -fx-border-color: #6D4C41;
     -fx-border-width: 2px;
 }
-
-
-/* =========================================================
-   LOGIN BUTTON
-   ========================================================= */
-
 .login-button {
-    -fx-background-color: linear-gradient(
-        to right,
-        #0B5ED7,
-        #287BFF
-    );
-
+    -fx-background-color: #6D4C41;
     -fx-text-fill: white;
-
     -fx-font-family: "Segoe UI";
     -fx-font-size: 15px;
     -fx-font-weight: bold;
-
     -fx-background-radius: 10px;
-
     -fx-cursor: hand;
 }
-
-
 .login-button:hover {
-    -fx-background-color: #084DB5;
+    -fx-background-color: #4E342E;
 }
-
-
 .login-button:pressed {
-    -fx-background-color: #063C8C;
+    -fx-background-color: #3E2723;
 }
-
-
-/* =========================================================
-   CLEAR BUTTON
-   ========================================================= */
-
 .clear-button {
     -fx-background-color: white;
-
-    -fx-text-fill: #0B5ED7;
-
-    -fx-border-color: #0B5ED7;
+    -fx-text-fill: #6D4C41;
+    -fx-border-color: #6D4C41;
     -fx-border-width: 1.5px;
     -fx-border-radius: 10px;
-
     -fx-background-radius: 10px;
-
     -fx-font-family: "Segoe UI";
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-
     -fx-cursor: hand;
 }
-
-
 .clear-button:hover {
-    -fx-background-color: #EAF3FF;
+    -fx-background-color: #EFEBE9;
 }
-
-
 .clear-button:pressed {
-    -fx-background-color: #D5E8FF;
+    -fx-background-color: #D7CCC8;
 }
-
-
-/* =========================================================
-   ERROR MESSAGE
-   ========================================================= */
-
 .error-label {
     -fx-text-fill: #D93025;
-
     -fx-font-family: "Segoe UI";
     -fx-font-size: 12px;
     -fx-font-weight: bold;
 }
-
-
-/* =========================================================
-   LOGIN FOOTER
-   ========================================================= */
-
 .footer-label {
-    -fx-text-fill: #999999;
-
+    -fx-text-fill: #AAAAAA;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 11px;
 }
-
-
-/* =========================================================
-   DASHBOARD ROOT
-   ========================================================= */
-
 .dashboard-root {
-    -fx-background-color: #F4F7FC;
+    -fx-background-color: #F9F5F0;
 }
-
-
-/* =========================================================
-   DASHBOARD SIDEBAR
-   ========================================================= */
-
 .sidebar {
-    -fx-background-color: linear-gradient(
-        to bottom,
-        #0B5ED7,
-        #063B88
-    );
+    -fx-background-color: linear-gradient(to bottom, #4E342E, #3E2723);
 }
-
-
-/* SIDEBAR TITLE */
-
 .sidebar-title {
     -fx-text-fill: white;
-
     -fx-font-family: "Segoe UI";
     -fx-font-size: 28px;
     -fx-font-weight: bold;
 }
-
-
-/* SIDEBAR SUBTITLE */
-
 .sidebar-subtitle {
-    -fx-text-fill: #DCEBFF;
-
+    -fx-text-fill: #D7CCC8;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 14px;
 }
-
-
-/* =========================================================
-   SIDEBAR BUTTONS
-   ========================================================= */
-
 .sidebar-button {
     -fx-background-color: transparent;
-
     -fx-text-fill: white;
-
     -fx-font-family: "Segoe UI";
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-
     -fx-alignment: CENTER_LEFT;
-
     -fx-padding: 0 15px;
-
     -fx-background-radius: 10px;
-
     -fx-cursor: hand;
 }
-
-
 .sidebar-button:hover {
-    -fx-background-color: rgba(255,255,255,0.18);
+    -fx-background-color: rgba(255,255,255,0.12);
 }
-
-
 .sidebar-button:pressed {
-    -fx-background-color: rgba(255,255,255,0.30);
+    -fx-background-color: rgba(255,255,255,0.22);
 }
-
-
-/* =========================================================
-   LOGOUT BUTTON
-   ========================================================= */
-
 .logout-button {
     -fx-background-color: white;
-
-    -fx-text-fill: #0B5ED7;
-
+    -fx-text-fill: #4E342E;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 14px;
     -fx-font-weight: bold;
-
     -fx-background-radius: 10px;
-
     -fx-cursor: hand;
 }
-
-
 .logout-button:hover {
-    -fx-background-color: #E8F1FF;
+    -fx-background-color: #EFEBE9;
 }
-
-
 .logout-button:pressed {
-    -fx-background-color: #D5E8FF;
+    -fx-background-color: #D7CCC8;
 }
-
-
-/* =========================================================
-   DASHBOARD MAIN CONTENT
-   ========================================================= */
-
 .dashboard-content {
-    -fx-background-color: #F4F7FC;
+    -fx-background-color: #F9F5F0;
 }
-
-
-/* =========================================================
-   DASHBOARD HEADER
-   ========================================================= */
-
 .dashboard-title {
-    -fx-text-fill: #172B4D;
-
+    -fx-text-fill: #3E2723;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 34px;
     -fx-font-weight: bold;
 }
-
-
 .dashboard-subtitle {
-    -fx-text-fill: #7A869A;
-
+    -fx-text-fill: #8D7B75;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 15px;
 }
-
-
-/* =========================================================
-   ADMIN LABEL
-   ========================================================= */
-
 .admin-label {
-    -fx-background-color: #E8F1FF;
-
-    -fx-text-fill: #0B5ED7;
-
+    -fx-background-color: #EFEBE9;
+    -fx-text-fill: #6D4C41;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 13px;
     -fx-font-weight: bold;
-
     -fx-padding: 10px 18px;
-
     -fx-background-radius: 20px;
 }
-
-
-/* =========================================================
-   STATISTIC CARDS
-   ========================================================= */
-
 .stat-card {
     -fx-background-color: white;
-
     -fx-background-radius: 15px;
-
     -fx-padding: 20px;
-
-    -fx-effect: dropshadow(
-        gaussian,
-        rgba(0,0,0,0.15),
-        15,
-        0.15,
-        0,
-        5
-    );
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.10), 15, 0.15, 0, 5);
 }
-
-
 .stat-card:hover {
-    -fx-effect: dropshadow(
-        gaussian,
-        rgba(11,94,215,0.35),
-        20,
-        0.20,
-        0,
-        6
-    );
+    -fx-effect: dropshadow(gaussian, rgba(109,76,65,0.25), 20, 0.20, 0, 6);
 }
-
-
-/* =========================================================
-   STAT CARD HEADING
-   ========================================================= */
-
 .card-heading {
-    -fx-text-fill: #0B5ED7;
-
+    -fx-text-fill: #8D6E63;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 11px;
     -fx-font-weight: bold;
 }
-
-
-/* =========================================================
-   STAT CARD TITLE
-   ========================================================= */
-
 .stat-title {
-    -fx-text-fill: #6B778C;
-
+    -fx-text-fill: #8D7B75;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 13px;
     -fx-font-weight: bold;
 }
-
-
-/* =========================================================
-   STAT CARD NUMBER
-   ========================================================= */
-
 .stat-number {
-    -fx-text-fill: #0B5ED7;
-
+    -fx-text-fill: #4E342E;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 32px;
     -fx-font-weight: bold;
 }
-
-
-/* =========================================================
-   WELCOME CARD
-   ========================================================= */
-
 .welcome-card {
     -fx-background-color: white;
-
     -fx-background-radius: 15px;
-
     -fx-padding: 30px;
-
-    -fx-effect: dropshadow(
-        gaussian,
-        rgba(0,0,0,0.12),
-        15,
-        0.15,
-        0,
-        5
-    );
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 15, 0.15, 0, 5);
 }
-
-
-/* WELCOME TITLE */
-
 .welcome-title {
-    -fx-text-fill: #0B5ED7;
-
+    -fx-text-fill: #4E342E;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 22px;
     -fx-font-weight: bold;
 }
-
-
-/* WELCOME TEXT */
-
 .welcome-text {
-    -fx-text-fill: #6B778C;
-
+    -fx-text-fill: #8D7B75;
     -fx-font-family: "Segoe UI";
     -fx-font-size: 14px;
 }
-
-
-/* =========================================================
-   GENERAL BUTTON
-   ========================================================= */
-
 .button {
     -fx-font-family: "Segoe UI";
-
     -fx-cursor: hand;
 }
-
-
-/* =========================================================
-   GENERAL LABEL
-   ========================================================= */
-
 .label {
     -fx-font-family: "Segoe UI";
 }
-/* =========================================================
-   ADD BOOK FORM
-   ========================================================= */
-
-
-/* FORM CARD */
-
 .form-card {
     -fx-background-color: white;
-
     -fx-background-radius: 18px;
-
     -fx-padding: 30px;
-
-    -fx-effect: dropshadow(
-        gaussian,
-        rgba(0,0,0,0.12),
-        18,
-        0.15,
-        0,
-        5
-    );
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 18, 0.15, 0, 5);
 }
-
-
-/* FORM CARD TITLE */
-
 .form-card-title {
-    -fx-text-fill: #172B4D;
-
+    -fx-text-fill: #3E2723;
     -fx-font-family: "Segoe UI";
-
     -fx-font-size: 22px;
-
     -fx-font-weight: bold;
 }
-
-
-/* FORM LABEL */
-
 .form-label {
-    -fx-text-fill: #344563;
-
+    -fx-text-fill: #5D4037;
     -fx-font-family: "Segoe UI";
-
     -fx-font-size: 14px;
-
     -fx-font-weight: bold;
 }
-
-
-/* FORM INPUT */
-
 .form-input {
-    -fx-background-color: #F7F9FC;
-
-    -fx-border-color: #D5E3F7;
-
+    -fx-background-color: #F9F5F0;
+    -fx-border-color: #D7CCC8;
     -fx-border-width: 1.5px;
-
     -fx-border-radius: 10px;
-
     -fx-background-radius: 10px;
-
     -fx-padding: 0 14px;
-
     -fx-font-family: "Segoe UI";
-
     -fx-font-size: 14px;
 }
-
-
-/* INPUT HOVER */
-
 .form-input:hover {
-    -fx-border-color: #9DBDEB;
+    -fx-border-color: #A1887F;
 }
-
-
-/* INPUT FOCUS */
-
 .form-input:focused {
     -fx-background-color: white;
-
-    -fx-border-color: #0B5ED7;
-
+    -fx-border-color: #6D4C41;
     -fx-border-width: 2px;
 }
-
-
-/* COMBO BOX */
-
 .combo-box.form-input {
-    -fx-background-color: #F7F9FC;
-
-    -fx-border-color: #D5E3F7;
-
+    -fx-background-color: #F9F5F0;
+    -fx-border-color: #D7CCC8;
     -fx-border-radius: 10px;
-
     -fx-background-radius: 10px;
 }
-
-
-/* PRIMARY BUTTON */
-
 .primary-button {
-    -fx-background-color: linear-gradient(
-        to right,
-        #0B5ED7,
-        #287BFF
-    );
-
+    -fx-background-color: #6D4C41;
     -fx-text-fill: white;
-
     -fx-font-family: "Segoe UI";
-
     -fx-font-size: 14px;
-
     -fx-font-weight: bold;
-
     -fx-background-radius: 10px;
-
     -fx-cursor: hand;
 }
-
-
 .primary-button:hover {
-    -fx-background-color: #084DB5;
+    -fx-background-color: #4E342E;
 }
-
-
 .primary-button:pressed {
-    -fx-background-color: #063C8C;
+    -fx-background-color: #3E2723;
 }
-
-
-/* CLEAR BUTTON */
-
-.clear-button {
-    -fx-background-color: white;
-
-    -fx-text-fill: #0B5ED7;
-
-    -fx-border-color: #0B5ED7;
-
-    -fx-border-width: 1.5px;
-
-    -fx-border-radius: 10px;
-
-    -fx-background-radius: 10px;
-
-    -fx-font-family: "Segoe UI";
-
-    -fx-font-size: 14px;
-
-    -fx-font-weight: bold;
-
-    -fx-cursor: hand;
-}
-
-
-.clear-button:hover {
-    -fx-background-color: #EAF3FF;
-}
-
-
-/* FORM MESSAGE */
-
 .form-message {
-    -fx-text-fill: #0B5ED7;
-
+    -fx-text-fill: #6D4C41;
     -fx-font-family: "Segoe UI";
-
     -fx-font-size: 13px;
-
     -fx-font-weight: bold;
 }
-
-
-/* INFO CARD */
-
 .info-card {
-    -fx-background-color: #EAF3FF;
-
+    -fx-background-color: #EFEBE9;
     -fx-background-radius: 12px;
-
     -fx-padding: 15px 20px;
 }
-
-
-/* INFO TEXT */
-
 .info-text {
-    -fx-text-fill: #315B91;
-
+    -fx-text-fill: #6D4C41;
     -fx-font-family: "Segoe UI";
-
     -fx-font-size: 13px;
 }
