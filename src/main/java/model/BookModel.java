@@ -1,19 +1,27 @@
 package model;
 
 import dto.BookDTO;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import com.library.Util.DBConnection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 public class BookModel {
 
-    public static boolean saveBook(BookDTO bookDTO) throws SQLException {
+    public static boolean saveBook(BookDTO bookDTO) throws Exception {
+        Connection connection = DBConnection.getInstance().getConnection();
 
-        return false;
-    }
 
-    public static List<BookDTO> getAllBooks() throws SQLException {
+        String sql = "INSERT INTO book (id, title, author, category, published_year, quantity) VALUES (?,?,?,?,?,?)";
+        PreparedStatement stm = connection.prepareStatement(sql);
 
-        return new ArrayList<>();
+        stm.setString(1, bookDTO.getId());
+        stm.setString(2, bookDTO.getTitle());
+        stm.setString(3, bookDTO.getAuthor());
+        stm.setString(4, bookDTO.getCategory());
+        stm.setString(5, bookDTO.getPublishedYear());
+        stm.setInt(6, bookDTO.getQuantity());
+
+        return stm.executeUpdate() > 0;
     }
 }
