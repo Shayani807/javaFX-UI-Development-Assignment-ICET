@@ -1,7 +1,7 @@
 package model;
 
 import dto.MemberDTO;
-import com.library.Util.DBConnection; // මේක විතරක් com.library එකේ, ඒක හරි
+import com.library.Util.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemberModel {
-
     public boolean saveMember(MemberDTO dto) throws Exception {
         Connection conn = DBConnection.getInstance().getConnection();
         String sql = "INSERT INTO member (member_id, full_name, email, phone, address) VALUES (?, ?, ?, ?, ?)";
@@ -21,7 +20,6 @@ public class MemberModel {
         pst.setString(5, dto.getAddress());
         return pst.executeUpdate() > 0;
     }
-
     public List<MemberDTO> getAllMembers() throws Exception {
         List<MemberDTO> list = new ArrayList<>();
         Connection conn = DBConnection.getInstance().getConnection();
@@ -31,7 +29,6 @@ public class MemberModel {
         }
         return list;
     }
-
     public boolean updateMember(MemberDTO dto) throws Exception {
         Connection conn = DBConnection.getInstance().getConnection();
         String sql = "UPDATE member SET full_name=?, email=?, phone=?, address=? WHERE member_id=?";
@@ -43,14 +40,12 @@ public class MemberModel {
         pst.setString(5, dto.getMemberId());
         return pst.executeUpdate() > 0;
     }
-
     public boolean deleteMember(String memberId) throws Exception {
         Connection conn = DBConnection.getInstance().getConnection();
         PreparedStatement pst = conn.prepareStatement("DELETE FROM member WHERE member_id=?");
         pst.setString(1, memberId);
         return pst.executeUpdate() > 0;
     }
-
     public int getTotalMembersCount() throws Exception {
         Connection conn = DBConnection.getInstance().getConnection();
         ResultSet rs = conn.createStatement().executeQuery("SELECT COUNT(*) FROM member");
