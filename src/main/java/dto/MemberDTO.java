@@ -7,7 +7,8 @@ public class MemberDTO {
     private String phone;
     private String address;
 
-    public MemberDTO() {}
+    public MemberDTO() {
+    }
 
     public MemberDTO(String memberId, String fullName, String email, String phone, String address) {
         this.memberId = memberId;
@@ -17,18 +18,43 @@ public class MemberDTO {
         this.address = address;
     }
 
-    public String getMemberId() { return memberId; }
-    public void setMemberId(String memberId) { this.memberId = memberId; }
+    public String getMemberId() {
+        return memberId;
+    }
 
-    public String getFullName() { return fullName; }
-    public void setFullName(String fullName) { this.fullName = fullName; }
+    public void setMemberId(String memberId) {
+        this.memberId = memberId;
+    }
 
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
+    public String getFullName() {
+        return fullName;
+    }
 
-    public String getPhone() { return phone; }
-    public void setPhone(String phone) { this.phone = phone; }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-    public String getAddress() { return address; }
-    public void setAddress(String address) { this.address = address; }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }
