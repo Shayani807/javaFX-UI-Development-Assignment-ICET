@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
 
 <StackPane xmlns="http://javafx.com/javafx/21"
            xmlns:fx="http://javafx.com/fxml/1"
@@ -22,22 +23,40 @@
           alignment="CENTER"
           styleClass="main-container">
 
-        <StackPane styleClass="library-section"
+        <!-- LIBRARY IMAGE SECTION -->
+        <StackPane fx:id="libraryPane"
+                   styleClass="library-section"
                    prefWidth="500"
                    prefHeight="650">
 
+            <!-- LIBRARY TEXT -->
             <VBox spacing="15"
                   alignment="CENTER_LEFT"
                   maxWidth="430">
 
-                <Label text="Library Management" styleClass="library-title"/>
-                <Label text="Access knowledge, build your future." styleClass="library-subtitle"/>
-                <Label text="Manage books, members and borrowing records easily." wrapText="true" styleClass="library-description"/>
+                <Label fx:id="libraryTitle"
+                       text="Library Management"
+                       styleClass="library-title"/>
+
+                <Label text="Access knowledge, build your future."
+                       styleClass="library-subtitle"/>
+
+                <Label text="Manage books, members and borrowing records easily."
+                       wrapText="true"
+                       styleClass="library-description"/>
 
             </VBox>
 
+            <!-- FALLING FLOWER PETALS -->
+            <Pane fx:id="petalLayer"
+                  prefWidth="500"
+                  prefHeight="650"
+                  mouseTransparent="true"
+                  pickOnBounds="false"/>
+
         </StackPane>
 
+        <!-- LOGIN SECTION -->
         <StackPane prefWidth="500"
                    prefHeight="650"
                    styleClass="login-section">
@@ -47,25 +66,67 @@
                   maxWidth="330"
                   styleClass="login-card">
 
-                <Label text="Welcome Back!" styleClass="login-title"/>
-                <Label text="Please login to continue" styleClass="login-subtitle"/>
+                <!-- LOGIN TITLE -->
+                <Label text="Welcome Back!"
+                       styleClass="login-title"/>
 
-                <VBox spacing="7" maxWidth="300">
-                    <Label text="Username" styleClass="field-label"/>
-                    <TextField fx:id="usernameField" promptText="Enter your username" prefWidth="300" prefHeight="45" styleClass="input-field"/>
+                <Label text="Please login to continue"
+                       styleClass="login-subtitle"/>
+
+                <!-- USERNAME -->
+                <VBox spacing="7"
+                      maxWidth="300">
+
+                    <Label text="Username"
+                           styleClass="field-label"/>
+
+                    <TextField fx:id="usernameField"
+                               promptText="Enter your username"
+                               prefWidth="300"
+                               prefHeight="45"
+                               styleClass="input-field"/>
+
                 </VBox>
 
-                <VBox spacing="7" maxWidth="300">
-                    <Label text="Password" styleClass="field-label"/>
-                    <PasswordField fx:id="passwordField" promptText="Enter your password" prefWidth="300" prefHeight="45" styleClass="input-field"/>
+                <!-- PASSWORD -->
+                <VBox spacing="7"
+                      maxWidth="300">
+
+                    <Label text="Password"
+                           styleClass="field-label"/>
+
+                    <PasswordField fx:id="passwordField"
+                                   promptText="Enter your password"
+                                   prefWidth="300"
+                                   prefHeight="45"
+                                   styleClass="input-field"/>
+
                 </VBox>
 
-                <Label fx:id="errorLabel" text="" maxWidth="300" wrapText="true" styleClass="error-label"/>
+                <!-- ERROR MESSAGE -->
+                <Label fx:id="errorLabel"
+                       text=""
+                       maxWidth="300"
+                       wrapText="true"
+                       styleClass="error-label"/>
 
-                <Button text="LOGIN" onAction="#handleLogin" prefWidth="300" prefHeight="45" styleClass="login-button"/>
-                <Button text="CLEAR" onAction="#handleClear" prefWidth="300" prefHeight="42" styleClass="clear-button"/>
+                <!-- LOGIN BUTTON -->
+                <Button text="LOGIN"
+                        onAction="#handleLogin"
+                        prefWidth="300"
+                        prefHeight="45"
+                        styleClass="login-button"/>
 
-                <Label text="Library Management System • 2026" styleClass="footer-label"/>
+                <!-- CLEAR BUTTON -->
+                <Button text="CLEAR"
+                        onAction="#handleClear"
+                        prefWidth="300"
+                        prefHeight="42"
+                        styleClass="clear-button"/>
+
+                <!-- FOOTER -->
+                <Label text="Library Management System • 2026"
+                       styleClass="footer-label"/>
 
             </VBox>
 
