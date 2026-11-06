@@ -1,28 +1,32 @@
-package Controller.Login;
+package com.library.controller;
 
 import dto.MemberDTO;
 import model.MemberModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class AddMemberController {
 
     @FXML private TextField memberIdField;
-    @FXML private TextField nameField;
+    @FXML private TextField fullNameField;
     @FXML private TextField emailField;
     @FXML private TextField phoneField;
-    @FXML private TextField addressField;
+    @FXML private TextArea addressArea;
+    @FXML private Label messageLabel;
 
     private final MemberModel memberModel = new MemberModel();
 
     @FXML
-    private void handleAddMember() {
+    private void handleRegisterMember() {
         try {
             String id = memberIdField.getText().trim();
-            String name = nameField.getText().trim();
+            String name = fullNameField.getText().trim();
 
-            if (name.isEmpty() || id.isEmpty()) {
+            if (id.isEmpty() || name.isEmpty()) {
+                messageLabel.setText("ID and Name required!");
                 new Alert(Alert.AlertType.WARNING, "ID and Name required!").show();
                 return;
             }
@@ -32,20 +36,30 @@ public class AddMemberController {
                     name,
                     emailField.getText().trim(),
                     phoneField.getText().trim(),
-                    addressField.getText().trim()
+                    addressArea.getText().trim()
             );
 
             if (memberModel.saveMember(dto)) {
+                messageLabel.setText("Member Added Successfully!");
                 new Alert(Alert.AlertType.INFORMATION, "Member Added Successfully!").show();
-                memberIdField.clear();
-                nameField.clear();
-                emailField.clear();
-                phoneField.clear();
-                addressField.clear();
+                handleClear();
+            } else {
+                messageLabel.setText("Failed to add member!");
             }
         } catch (Exception e) {
             e.printStackTrace();
+            messageLabel.setText(e.getMessage());
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    @FXML
+    private void handleClear() {
+        memberIdField.clear();
+        fullNameField.clear();
+        emailField.clear();
+        phoneField.clear();
+        addressArea.clear();
+        messageLabel.setText("");
     }
 }
