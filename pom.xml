@@ -10,38 +10,69 @@
     <artifactId>LibraryManagementSystem</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- Project Properties -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
+        <javafx.version>21.0.1</javafx.version>
     </properties>
 
+    <!-- Dependencies -->
     <dependencies>
+
+        <!-- JavaFX Controls -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>17.0.10</version>
+            <version>${javafx.version}</version>
         </dependency>
+
+        <!-- JavaFX FXML -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>17.0.10</version>
+            <version>${javafx.version}</version>
         </dependency>
 
+        <!-- MySQL Connector -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.0.33</version>
         </dependency>
+
+        <!-- Hibernate ORM -->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.4.4.Final</version>
+        </dependency>
+
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.48</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
+    <!-- Build Configuration -->
     <build>
         <plugins>
+
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>21</release>
+                </configuration>
             </plugin>
+
+            <!-- JavaFX Maven Plugin -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -50,6 +81,8 @@
                     <mainClass>com.library.Main</mainClass>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
+
 </project>
